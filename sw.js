@@ -1,6 +1,6 @@
 // Service worker — offline real para o site publicado (Netlify/GitHub Pages)
 // Estratégia: network-first para o documento; cache-first para o resto.
-const CACHE = 'sartre-v1';
+const CACHE = 'sartre-v2';
 
 self.addEventListener('install', (e) => { self.skipWaiting(); });
 
