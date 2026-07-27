@@ -1,7 +1,7 @@
 // Service worker — offline real para o site publicado (Netlify/GitHub Pages)
 // Estratégia: stale-while-revalidate no documento (serve do cache na hora e
 // atualiza em 2º plano) — economiza banda; cache-first para o resto.
-const CACHE = 'sartre-v5';
+const CACHE = 'sartre-v6';
 
 self.addEventListener('install', (e) => { self.skipWaiting(); });
 
@@ -36,15 +36,18 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // network-first para assets mesma-origem (garante versão nova; cache só offline)
+  // stale-while-revalidate para assets mesma-origem: serve do cache NA HORA
+  // (os pacotes de conteúdo têm MBs — refetch a cada visita era o gargalo)
+  // e atualiza em 2º plano para a próxima visita.
   e.respondWith((async () => {
     const cache = await caches.open(CACHE);
-    try {
-      const fresh = await fetch(req);
+    const cached = await cache.match(req);
+    const refetch = fetch(req).then(fresh => {
       if (fresh && fresh.status === 200) cache.put(req, fresh.clone());
       return fresh;
-    } catch (err) {
-      return (await cache.match(req)) || Response.error();
-    }
+    }).catch(() => null);
+    if (cached) return cached; // o refetch segue em 2º plano e renova o cache
+    const fresh = await refetch;
+    return fresh || Response.error();
   })());
 });

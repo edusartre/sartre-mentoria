@@ -1,0 +1,37 @@
+// Método de produção de redação (Interpretar → Criar → Redigir) — base de aprendizado.
+window.DISC_METODO = [
+  { etapa: 'Interpretar', cor: '#3a6ea5', icon: '🔍', passos: [
+    { n: 1, passo: 'Ler o texto norteador, resumir e correlacionar as ideias do tema com as dos textos motivadores.',
+      competencia: 'Compreender a proposta e posicionar-se quanto ao tema.',
+      banca: 'Verificar se o candidato sabe o que foi pedido.',
+      ferramenta: 'Leia a proposta no topo do workspace e a "Orientação — pontos fortes do tema".' },
+    { n: 2, passo: 'Reescrever o tema e formular a tese.',
+      competencia: 'Sintetizar o tema e assumir um ponto de vista.',
+      banca: 'Verificar clareza e delimitação da tese.',
+      ferramenta: 'Preencha o campo "Tese" no Mapa argumentativo.' },
+  ] },
+  { etapa: 'Criar', cor: '#a06a1f', icon: '🧩', passos: [
+    { n: 3, passo: 'Gerar e selecionar ideias (divergir → convergir).',
+      competencia: 'Elaborar um ponto de vista com base em argumentos.',
+      banca: 'Averiguar seleção, organização e interpretação dos fatos; conferir a veracidade e a qualidade da linha de pensamento.',
+      ferramenta: 'Use o Repertório por área e os campos de ideias/fundamentação; mantenha só as ideias aderentes à tese.' },
+    { n: 4, passo: 'Elaborar o roteiro (mapa argumentativo).',
+      competencia: 'Demonstrar conhecimento de mecanismos lógicos (coesivos).',
+      banca: 'Avaliar a estruturação lógica das partes, o encadeamento textual e a coesão dos argumentos.',
+      ferramenta: 'Monte o Mapa argumentativo (modelo Argumentativo ou Polêmico) e a Solução.' },
+    { n: 5, passo: 'Elaborar a proposta de intervenção / solução.',
+      competencia: 'Propor uma solução exequível e detalhada.',
+      banca: 'Observar se há solução para o problema e se ela é viável e detalhada.',
+      ferramenta: 'Preencha o campo "Solução / fechamento" do mapa.' },
+  ] },
+  { etapa: 'Redigir', cor: '#2f7a4f', icon: '✍️', passos: [
+    { n: 6, passo: 'Gerar o rascunho.',
+      competencia: 'Dominar a norma padrão da língua escrita.',
+      banca: 'Verificar precisão vocabular e ausência de oralidade.',
+      ferramenta: 'Escreva cada parte nos blocos (Introdução, Ideia 1, Ideia 2, Conclusão) usando os Caveirões como apoio.' },
+    { n: 7, passo: 'Efetuar a autocorreção (ler 2×: ideia e gramática) e produzir o texto final.',
+      competencia: 'Revisar conteúdo e forma.',
+      banca: 'Checar domínio da gramática, coesão e adequação ao comando.',
+      ferramenta: 'Use "Corrigir este bloco" e "Avaliar texto completo" (fórmula da banca).' },
+  ] },
+];
